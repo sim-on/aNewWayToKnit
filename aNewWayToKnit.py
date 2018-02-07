@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 from PIL import Image, ImageDraw
 import numpy as np
@@ -43,7 +43,7 @@ def raster_line(x0, y0, x1, y1):
 
 
 def rotation_matrix(alpha):
-	"""Return the rotation matrix for angle alpha"""
+    """Return the rotation matrix for angle alpha"""
     angle = np.radians(alpha)
     c, s = np.cos(angle), np.sin(angle)
     R = [[c, -s], [s, c]]
@@ -51,7 +51,7 @@ def rotation_matrix(alpha):
 
 
 class Point:
-	"""Holds a 2D point"""
+    """Holds a 2D point"""
     def __init__(self, x, y, index):
         self.x = x
         self.y = y
@@ -59,7 +59,7 @@ class Point:
 
 
 class Circle:
-	"""Holds a circle consisting of points around a center"""
+    """Holds a circle consisting of points around a center"""
     def __init__(self, center_x, center_y, radius, num_points):
         self.angle = 0
         self.center_x = center_x
@@ -82,14 +82,14 @@ class Circle:
 
 
 def line_weight(image, line):
-	"""Returns the 'weight', i.e. the total amount of 'blackness' of a line"""
+    """Returns the 'weight', i.e. the total amount of 'blackness' of a line"""
     summe = len(line) * 255 - np.sum(image[line[:, 1], line[:, 0]])
     summe /= len(line)
     return summe
 
 
 def change_brightness(image, line):
-	"""Brightens a line in the image by a fixed amount"""
+    """Brightens a line in the image by a fixed amount"""
     for pixel in line:
         value = image[pixel[1]][pixel[0]]
         value += 50
@@ -99,7 +99,7 @@ def change_brightness(image, line):
 
 
 def pair(a, b):
-	"""Holds a pair of points. Gets appended to the list of used points."""
+    """Holds a pair of points. Gets appended to the list of used points."""
     if a < b:
         return str(a) + "-" + str(b)
     else:
@@ -107,9 +107,9 @@ def pair(a, b):
 
 
 def lines_list(steps, image, circle, usedpoints, pointslist, mdiff):
-	"""The main algorithm. Iteratively finds the next best point to 
-	approximate the image. 
-	"""
+    """The main algorithm. Iteratively finds the next best point to 
+    approximate the image. 
+    """
     loops = 0
     startpoint = circle.points[0]
     while loops < steps:
