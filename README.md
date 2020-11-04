@@ -1,5 +1,4 @@
-# aNewWayToKnit
-## Python implementation of Petros Vrellis' "A New Way to Knit"
+# Python implementation of Petros Vrellis' "A New Way to Knit"
 
 ![nails](nails.jpg)
 
@@ -7,7 +6,7 @@ This (rough) python script is a means to reproduce the images created by Petrol 
 
 [http://artof01.com/vrellis/works/knit.html](http://artof01.com/vrellis/works/knit.html)
 
-Have a look at my [blog article](http://www.grosser.in/2017/07/26/hula/) to see how it works!
+Have a look at my [blog article](https://sim-on.github.io/2017/07/26/hula/) to see how it works!
 
 The script accepts the following parameters:
 

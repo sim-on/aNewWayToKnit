@@ -5,7 +5,6 @@ import numpy as np
 import sys
 import getopt
 
-
 def raster_line(x0, y0, x1, y1):
     """Return numpy array of integer coordinates on the line
     from (x0, y0) to (x1, y1). Input coordinates should be integers.
@@ -107,8 +106,8 @@ def pair(a, b):
 
 
 def lines_list(steps, image, circle, usedpoints, pointslist, mdiff):
-    """The main algorithm. Iteratively finds the next best point to 
-    approximate the image. 
+    """The main algorithm. Iteratively finds the next best point to
+    approximate the image.
     """
     loops = 0
     startpoint = circle.points[0]
@@ -150,7 +149,7 @@ def main(argv):
     minimum_difference = 20
     number_of_pins = 200
     outputimage_size = 400
-    helpString = "aNewWayToKnit.py -i <input_file> -n <number_of_pins> -s <outputimage_size> -t <number_of_threads> -m <minimum_difference>"
+    helpString = "knit.py -i <input_file> -n <number_of_pins> -s <outputimage_size> -t <number_of_threads> -m <minimum_difference>"
     try:
         opts, args = getopt.getopt(
             argv, "hi:n:s:t:m:", ["input=", "number_of_pins=", "outputimage_size=", "number_of_threads=", "minimum_difference="])
