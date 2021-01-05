@@ -5,6 +5,7 @@ import numpy as np
 import sys
 import getopt
 
+
 def raster_line(x0, y0, x1, y1):
     """Return numpy array of integer coordinates on the line
     from (x0, y0) to (x1, y1). Input coordinates should be integers.
@@ -51,6 +52,7 @@ def rotation_matrix(alpha):
 
 class Point:
     """Holds a 2D point"""
+
     def __init__(self, x, y, index):
         self.x = x
         self.y = y
@@ -59,6 +61,7 @@ class Point:
 
 class Circle:
     """Holds a circle consisting of points around a center"""
+
     def __init__(self, center_x, center_y, radius, num_points):
         self.angle = 0
         self.center_x = center_x
@@ -187,7 +190,7 @@ def main(argv):
     if outputimage_size == 0:
         outputimage_size = image_size
     input_image = input_image.convert("L")
-    input_image = np.asarray(input_image)
+    input_image = np.array(input_image)
     input_image.flags.writeable = True
 
     circle = Circle(image_size // 2, image_size // 2,
